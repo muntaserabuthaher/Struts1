@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="logINForm" type="info.java.tips.form.LogINForm" />
+		<form-bean name="TaskForm" type="info.java.tips.form.TaskForm" />
+		<form-bean name="UserForm" type="info.java.tips.form.UserForm" />
+	</form-beans>
+
+	<action-mappings>
+		<action path="/login" type="info.java.tips.action.LogInAction" name="logINForm" >
+			<forward name="success" path="/Home.jsp" />
+			<forward name="failure" path="/index.jsp" /> 
+		</action>
+		<action path="/task" type="info.java.tips.action.TaskAction" name="TaskForm" >
+			<forward name="success" path="/ViewTask.jsp" />
+			<!-- <forward name="failure" path="/welcome.jsp" /> -->
+		</action>
+		<action path="/user" type="info.java.tips.action.UserAction" name="UserForm" >
+			<forward name="success" path="/ViewDeveloper.jsp" />
+			<!-- <forward name="failure" path="/welcome.jsp" /> -->
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter ="info.java.tips.i18n.MessageBundle" />
+
+</struts-config>
